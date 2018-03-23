@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <string.h>
+struct card{
+char name[20];
+char grade[10];
+int roll_no;
+char address[10];
+};
+
+//for multi person
+int main()
+{
+    struct card info[100]; //we need array so
+    int n,i;
+
+    printf("How many student record do you want to study: ");
+    scanf("%d",&n);
+
+    printf("Enter %d records \n",n);
+
+    for (i=0;i<n;i++)
+    {
+        getchar();
+        printf("\nEnter name of student:");     //recall from array
+        gets(info[i].name);                   // int a[i]?? right
+
+        printf("Enter grade:");
+        gets(info[i].grade);
+
+        printf("Address:");
+        gets(info[i].address);
+
+        printf("Enter roll no:");
+        scanf("%d",&info[i].roll_no);
+
+    }
+    printf("\n\nThe informations are:\n");
+
+    for(i=0;i<n;i++)
+    {
+    printf("\n\nName: %s\nGrade: %s\nRoll no: %d\nAddress: %s",info[i].name,info[i].grade,info[i].roll_no,info[i].address);
+    }
+    return 0;
+
+}
+
+/*or single person
+int main()
+{
+    struct card info;
+
+    printf("Enter name of student:");
+    gets(info.name);
+
+    printf("Enter grade:");
+    gets(info.grade);
+
+
+
+    printf("Address:");
+    gets(info.address);
+
+    printf("Enter roll no:");
+    scanf("%d",&info.roll_no);
+
+    printf("\n\nThe informations are:\n");
+
+    printf("Name: %s\n Grade: %s\nRoll no: %d\nAddress: %s",info.name,info.grade,info.roll_no,info.address);
+    return 0;
+
+} */
