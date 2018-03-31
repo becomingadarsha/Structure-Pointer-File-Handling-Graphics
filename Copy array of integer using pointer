@@ -1,0 +1,23 @@
+//7.	Write a program that uses pointers to copy an array of integer.
+
+#include<Stdio.h>
+int main()
+{
+	int i, a[100],n;
+	int *p;
+	printf("How many numbers ?");
+	scanf("%d",&n);
+	p=&a[0];
+	printf("Enter array elements:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&*(p+i));
+	}
+	printf("The elements are :");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\n",*(p+i));
+	}
+	
+	
+}
