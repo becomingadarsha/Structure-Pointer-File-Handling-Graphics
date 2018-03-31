@@ -1,0 +1,24 @@
+#include <stdio.h>
+void main()
+{
+    int a[10][10],m,n,i,j;
+    int *ptr;
+    ptr = &a[0];
+    printf("Enter row and column: ");
+    scanf("%d %d",&m,&n);
+    printf("Enter %d elements: \n",m*n);
+
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+            scanf("%d",(ptr +i*n+j));//(base_address+row_number*number_of_columns+col_number)
+    }
+
+    printf("The matrix is: \n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+            printf("%d\t",*(ptr +i*n+j));
+        printf("\n");
+    }
+}
