@@ -1,0 +1,22 @@
+//Program to open file and input a number and also show in terminal 
+//Basic ques of file handling
+
+#include<stdio.h>
+int main()
+{
+	FILE *fp;	//fp is pointer variable of file type
+	int num;
+	fp=fopen("number.txt","w");
+	printf("enter number:");
+	scanf("%d",&num);
+	fprintf(fp,"%d\n",num);
+	fclose(fp);
+	
+  //Time to open above file and show in terminal
+	fp=fopen("number.txt","r"); 
+	fscanf(fp,"%d",&num); //read data from txt
+	printf("%d",num); //display in terminal
+	fclose(fp);
+	
+	
+}
