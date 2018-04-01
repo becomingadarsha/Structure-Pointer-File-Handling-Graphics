@@ -1,0 +1,41 @@
+//Write a program to create and write N numbers in file "NUMBER.txt". Open this file read its content and put odd numbers in file odd.txt and even numbers in file even.txt
+
+//Incomplete Program
+
+#include<stdio.h>
+int main()
+{
+	FILE *fp,*op;
+	int num,a[100],i;
+	fp=fopen("number.txt","w");
+	printf("How many number?");
+	scanf("%d",&num);
+	printf("Enter  numbers one by one:");
+	for(i=0;i<num;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("\nThe numbers are:");
+		for(i=0;i<num;i++)
+	{
+	fprintf(fp,"%d\n",a[i]);
+    }
+	fclose(fp);
+	
+	op=fopen("odd.txt","w");
+	
+//	fp=fopen("number.txt","r");
+	for(i=0;i<num;i++)
+	{
+	fscanf(fp,"%d",&num);
+}
+		for(i=0;i<num;i++)
+	{
+		if(a[i]%2==0)
+		{
+		fprintf("%d\n",a[i]);
+		}
+}
+	fclose(fp);
+	
+}
