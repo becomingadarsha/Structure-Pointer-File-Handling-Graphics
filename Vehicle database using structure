@@ -1,0 +1,54 @@
+//Define a structure for Vehicle Owner having data members name, address, telephone number, 
+//vehicle number and license number. Take the data for ten owners, write them in file “Own.txt”. 
+//Read the data from the file and display them. 
+
+#include<stdio.h>
+#include<string.h>
+struct vehicle{
+	char name[100];
+	char address[100];
+	int tel_no, veh_no, lis_no;
+};
+int main()
+{
+	FILE *fp;
+	struct vehicle data[100];
+	int i,n;
+	printf("How many owners?");
+	scanf("%d",&n);
+	
+	fp=fopen("vehicledata.txt","w");
+	
+	for(i=0;i<n;i++)
+	{
+	printf("Name:");
+	scanf("%s",&data[i].name);
+	
+	printf("Address:");
+	scanf("%s",&data[i].address);
+	
+	printf("Telephone no:");
+	scanf("%d",&data[i].tel_no);
+	
+	printf("Vehicle no:");
+	scanf("%d",&data[i].veh_no);
+	
+	printf("Liscense number:");
+	scanf("%d",&data[i].lis_no);
+	}
+	for(i=0;i<n;i++)
+	{
+		fprintf(fp,"%s\n,%s\n,%d\n,%d\n,%d\n",data[i].name,data[i].address,data[i].tel_no,data[i].veh_no,data[i].lis_no);
+}
+    fclose(fp);
+    fp=fopen("vehicles.txt","r");
+    	for(i=0;i<n;i++)
+	{
+		fscanf(fp,"%s\n,%s\n,%d\n,%d\n,%d\n",&data[i].name,&data[i].address,&data[i].tel_no,&data[i].veh_no,&data[i].lis_no);
+		printf("%s,\n%s,\n%d,\n%d,\n%d",data[i].name,data[i].address,data[i].tel_no,data[i].veh_no,data[i].lis_no);
+	}
+	fclose(fp);
+}
+    
+    
+    
