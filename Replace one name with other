@@ -1,0 +1,24 @@
+//Some text file is given, create another text file replacing the following words “Ram” to “Hari”, “Sita” to “Gita”, and “Govinda” to “Shyam
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp, *fpp;
+	char c[100];
+	fp=fopen("name.txt","r");     //just reading a file
+	fpp=fopen("name2.txt","w");
+	while((fscanf(fp,"%s",&c))!=EOF)
+	{
+		if(strcmp(c, "Ram")==0) 
+	fprintf(fpp, "Hari ",c); 
+	else if(strcmp(c, "Sita")==0) 
+	fprintf(fpp,"Gita",c); 
+	else if(strcmp(c, "Govinda")==0) 
+	fprintf(fpp, "Shiva",c); 
+	else 
+	fprintf(fpp,"%s ",c);
+	}
+	fclose(fpp);
+	fclose(fp);
+	
+}
