@@ -1,0 +1,47 @@
+// Write a text with a set of characters, create another text file deleting all the vowels (a, e, i, o, u).
+
+
+//file1
+#include <stdio.h> 
+void main() 
+{ 
+FILE *fp; 
+char filename[20]; 
+char c; 
+printf("Enter filename:\t"); 
+gets(filename); 
+fp=fopen(filename,"w"); 
+printf("\nEnter text to write to file %s:\n", filename); 
+while((c=getchar())!='\n') 
+fputc(c,fp); 
+fclose(fp); 
+getch(); 
+} 
+
+
+//file2
+#include <stdio.h> 
+void main() 
+{ 
+FILE *fp,*fpp; 
+char c; 
+fp=fopen("namefile.txt","r"); 
+if(fp==NULL) 
+{ 
+printf("Cannot open file"); 
+} 
+fpp=fopen("namefile2.txt","w"); 
+if(fpp==NULL) 
+{ 
+printf("Cannot create file"); 
+} 
+while((c=fgetc(fp))!=EOF) 
+{ 
+if((c!='a')&&(c!='e')&&(c!='i')&&(c!='o') &&(c!='u')) 
+fputc(c,fpp); 
+} 
+fclose(fp); 
+fclose(fpp); 
+getch(); 
+} 
+
