@@ -1,0 +1,19 @@
+//Given a text file, create another text file deleting the following words “three”, “bad”, and “time”.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp, *fpp;
+	char a[100],b[100];
+	fp=fopen("textfile.txt","r");//just reading already present file
+	fpp=fopen("newfile.txt","w");
+	while(fscanf(fp,"%s",&a)!=EOF)
+	{
+		if((strcmp(a,"three")!=0)&&(strcmp(a,"bad")!=0)&&(strcmp(a,"time")!=0))
+		{
+			fprintf(fpp,"%s",a);
+		}
+	}
+	fclose(fpp);
+	fclose(fp);
+}
