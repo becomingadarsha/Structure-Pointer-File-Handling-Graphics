@@ -1,0 +1,21 @@
+//PROGRAM TO CREATE A FILE NAMED string.TXT AND WRITE TEXT I STUDY B.SC. CSIT” TO THE FILE 
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp;
+	fp=fopen("string.txt","w");
+
+if(fp==NULL) 
+{ 
+printf("\n Cannot create file."); 
+return(0); 
+} 
+else 
+{ 
+printf("\n File is created."); 
+} 
+fputs("I study in CSIT.",fp);
+fclose(fp);
+}
