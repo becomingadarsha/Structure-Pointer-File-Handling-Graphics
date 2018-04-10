@@ -1,0 +1,21 @@
+//PROGRAM TO OPEN THE FILE NAMED string.TXT, READ ITS CONTENT AND DISPLAY IT TO SCREEN. 
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp;
+     char s[100];
+	fp=fopen("string.txt","r");
+	if(fp==NULL)
+	{
+		printf("FILE CAN'T BE OPENED\n");
+		return 0;
+	}
+	else{
+		printf("File is opened\n");
+	}
+	fgets(s,45,fp);
+	printf("File has contetnt:\n %s",s);
+	fclose(fp);
+}
