@@ -1,41 +1,41 @@
-//Write a program to create and write N numbers in file "NUMBER.txt". Open this file read its content and put odd numbers in file odd.txt and even numbers in file even.txt
-
-//Incomplete Program
+//Write a program which accept a series of integer numbers from the user 
+//and stores all odd numbers in a file name odd.txt and all even numbers in a file name even.txt.
 
 #include<stdio.h>
+#include<string.h>
 int main()
 {
-	FILE *fp,*op;
-	int num,a[100],i;
-	fp=fopen("number.txt","w");
-	printf("How many number?");
-	scanf("%d",&num);
-	printf("Enter  numbers one by one:");
-	for(i=0;i<num;i++)
+	FILE *fp1,*fp2,*fp3;
+	int i,n,a[100];
+	fp1=fopen("integernumbers.txt","w");
+	printf("How many numbers?");
+	scanf("%d",&n);
+	printf("Enter numbers:");
+	for(i=1;i<=n;i++)
 	{
 		scanf("%d",&a[i]);
+		
 	}
-	printf("\nThe numbers are:");
-		for(i=0;i<num;i++)
-	{
-	fprintf(fp,"%d\n",a[i]);
-    }
-	fclose(fp);
+	fclose(fp1);
 	
-	op=fopen("odd.txt","w");
+	fp1=fopen("integersnumbers.txt","r");
+	fp2=fopen("odd.txt","w");
+	fp3=fopen("even.txt","w");
 	
-//	fp=fopen("number.txt","r");
-	for(i=0;i<num;i++)
+	
+	for(i=1;i<=n;i++)
 	{
-	fscanf(fp,"%d",&num);
-}
-		for(i=0;i<num;i++)
-	{
-		if(a[i]%2==0)
+		fscanf(fp1,"%d",&a[i]);  
+		if((a[i]%2)==0)
 		{
-		fprintf("%d\n",a[i]);
+			fprintf(fp2,"%d\n",a[i]);
 		}
-}
-	fclose(fp);
-	
+		else
+		{
+			fprintf(fp3,"%d\n",a[i]);
+		}
+	}
+	fclose(fp1);
+	fclose(fp2);
+	fclose(fp3);
 }
