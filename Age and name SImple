@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+struct student{
+	int age;
+	char name[20];
+	};
+void display(int ,char[]);
+int main(){
+struct student stu;
+printf("enter the age of student\n");
+scanf("%d",&stu.age);
+printf("enter the name of student\n");
+scanf("%s",stu.name);
+printf("The age and name is %d and %s",stu.age,stu.name);
+getch();return 0;
+}
+
