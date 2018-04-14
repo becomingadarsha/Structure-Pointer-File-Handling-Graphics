@@ -7,11 +7,20 @@ struct student{
 void display(int ,char[]);
 int main(){
 struct student stu;
+clrscr();
 printf("enter the age of student\n");
 scanf("%d",&stu.age);
 printf("enter the name of student\n");
 scanf("%s",stu.name);
-printf("The age and name is %d and %s",stu.age,stu.name);
-getch();return 0;
+display(stu.age,stu.name);
+getch();
+return 0;
+}
+void display(int x, char c[])
+{
+printf("the age of student\n");
+printf("%d",x);
+printf("the name of student\n");
+printf("%s",c);
 }
 
