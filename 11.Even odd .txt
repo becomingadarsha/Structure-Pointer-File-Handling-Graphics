@@ -14,7 +14,7 @@ int main()
 	for(i=1;i<=n;i++)
 	{
 		scanf("%d",&a[i]);
-		
+		fprintf(fp"%d",a[i];
 	}
 	fclose(fp1);
 	
