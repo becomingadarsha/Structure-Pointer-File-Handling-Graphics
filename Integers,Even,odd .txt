@@ -1,5 +1,5 @@
-//Write a program which accept a series of integer numbers from the user 
-//and stores all odd numbers in a file name odd.txt and all even numbers in a file name even.txt.
+//Write a program which accept a series of integer numbers from the user store it in integer.txt
+//and read the file and again stores all odd numbers in a file name odd.txt and all even numbers in a file name even.txt.
 
 #include<stdio.h>
 #include<string.h>
