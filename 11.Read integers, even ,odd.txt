@@ -4,7 +4,7 @@
 #include<string.h>
 int main()
 {
-	FILE *fp2,*fp3;
+	FILE *fp1,*fp2;
 	int i,n,a[100];
 	printf("How many numbers?");
 	scanf("%d",&n);
@@ -14,13 +14,13 @@ int main()
 		scanf("%d",&a[i]);
 		
 	}
+	fp1=fopen("even.txt","w");
 	fp2=fopen("odd.txt","w");
-	fp3=fopen("even.txt","w");
 	for(i=1;i<=n;i++)
 	{
 		if((a[i]%2)==0)
 		{
-			fprintf(fp3,"%d\n",a[i]);
+			fprintf(fp1,"%d\n",a[i]);
 		}
 		else
 		{
@@ -28,6 +28,6 @@ int main()
 		}
 	}
 
+	fclose(fp1);
 	fclose(fp2);
-	fclose(fp3);
 }
