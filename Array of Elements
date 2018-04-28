@@ -1,0 +1,25 @@
+//ARRAY OF ELEMNTS USING DMA
+
+#include<stdio.h>
+int main()
+{
+	int *ptr;
+	int i,n;
+	printf("How many numbers ?");
+	scanf("%d",&n);
+	//malloc
+	ptr=(int*)malloc(n* sizeof(int));
+	//caalloc as array type
+	ptr=(int*)calloc(n,sizeof(int));
+	printf("Enter elements one by one:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",(ptr+i));
+	}
+	printf("Given elements:");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\n",(*ptr+i));
+	}
+	free(ptr);
+}
