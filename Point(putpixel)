@@ -1,0 +1,14 @@
+//Write a program to plot a point on the monitor.
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+ 
+void main()
+{
+   int gd = DETECT, gm;
+   initgraph(&gd, &gm, "C:\\TC\\BGI");
+   putpixel(25, 25, RED);
+   getch();
+   closegraph();
+   return 0;
+}
