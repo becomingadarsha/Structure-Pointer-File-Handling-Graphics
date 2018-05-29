@@ -1,0 +1,42 @@
+/* Q : create a structure "student" with attributes  name,age,birthplace,name varaiable stores name of student,
+age stores the age of that student and birthplace stores the name of the place where that student was born...................
+.In main program ,create array of 10 students.Write a code to input data of 10 students from user...
+IN addition to that , your program should check wether any two or more students are neighbours or not .
+TWO STUDENTS ATE CALLED NEIHBOUR IF THEY HAVE SAME BIRTHPLACE
+*/
+
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+struct student {
+int roll;
+	char name[20],birth[25];
+};
+int main() 
+{
+struct student a[5],b[5];
+	int i,j,num;		
+		printf("How many students");
+	scanf("%d",&num);
+	for (i=0;i<num;++i)
+	 {
+	printf("Enter name: ");
+		gets(a[i].name);
+		printf("Enter roll no: ");
+		scanf("%d",&a[i].roll);
+		printf("Enter birthplace:");
+		scanf("%s",&a[i].birth);
+     }
+     //checking their bithplaces
+     for (i=0;i<num;++i)
+     {
+  
+	 if (strcmp(a[0].birth,a[i+1].birth)==0)
+ {
+ printf("%s and %s are neighbours",a[0].name,a[i+1].name);
+ }
+ 
+ }
+ return 0;
+ }
+	 
