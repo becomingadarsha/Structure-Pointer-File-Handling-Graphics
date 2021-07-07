@@ -1,0 +1,19 @@
+//Write a program to find area, perimeter of rectangle by passing pointer to function.
+
+#include<stdio.h>
+void AP(float *l,float *b,float *a,float *p);
+
+int main()
+{
+	float l,b,area,peri;
+	printf("Enter length and breadth:");
+	scanf("%f%f",&l,&b);
+	AP(&l,&b,&area,&peri);
+	printf("Area=%f \n Perimeter = %f",area,peri);
+}
+
+void AP(float *l,float *b,float *a,float *p)
+{
+	*a = (*l) * (*b);
+	*p = 2 * (*l + *b);
+}

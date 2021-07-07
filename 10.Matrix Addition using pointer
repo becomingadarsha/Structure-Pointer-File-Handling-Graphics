@@ -1,0 +1,46 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,row,col;
+	int a[10][10], *x;
+	int b[10][10], *y;
+	int sum[10][10], *z;
+	x=&a;
+	y=&b;
+	z=&sum;
+	printf("Enter row and column: ");
+    scanf("%d %d",&row,&col);
+    printf("Enter elements of first matrix:\n");
+for(i=0;i<row;i++)
+{
+	for(j=0;j<col;j++)
+	{
+		scanf("%d",(x+i*col+j));
+	}
+}
+    printf("Enter elements of second matrix:\n");
+for(i=0;i<row;i++)
+{
+	for(j=0;j<col;j++)
+	{
+		scanf("%d",(y+i*col+j));
+	}
+}
+for(i=0;i<row;i++)
+{
+	for(j=0;j<col;j++)
+	{
+	*(z+i*col+j)= (*(x+i*col+j)) + (*(y+i*col+j));
+	}
+}
+printf("Sum is :\n");
+for(i=0;i<row;i++)
+{
+	for(j=0;j<col;j++)
+	{
+	 printf("%d\t",*(z+i*col+j));
+	}
+	printf("\n");
+}
+
+}

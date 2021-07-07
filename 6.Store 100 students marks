@@ -1,0 +1,25 @@
+#include<stdio.h>
+void marks(int arr[],int m);
+void main()
+{	int i,n,a[20];
+	printf("Enter marks of 100 students\n");
+	
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	
+	marks(a,n);
+	getch();
+}
+void marks(int arr[],int m)
+{
+	int j,sum=0;
+	
+	printf("The marks are :\n");
+	for(j=0;j<m;j++)
+	{
+		printf("%d\n",arr[j]);	
+	}
+	
+}
