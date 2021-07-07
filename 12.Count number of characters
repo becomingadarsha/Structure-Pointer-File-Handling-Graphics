@@ -1,0 +1,31 @@
+//12.	Write a program to create and count numbers of character in a file.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp;
+	char ch,a,str[100];
+	int i,count=0;
+	fp=fopen("string.txt","w");
+	printf("Enter the line you want to print:");
+   gets(str);
+   fputs(str,fp);
+   
+	printf("Enter a character to find the frequency: ");
+   scanf("%c",&ch);
+   fclose(fp);
+   fp=fopen("string.txt","r");
+while((a=fgetc(fp))!=EOF) 
+	{
+	
+		if(a==ch)
+		{
+			count++;
+		}
+	}
+	printf("The number of %c in a file is %d",ch,count);
+	fclose(fp);
+}
+	
+	
+	

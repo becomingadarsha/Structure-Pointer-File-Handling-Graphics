@@ -1,0 +1,22 @@
+//Put anything you want on file
+#include<stdio.h>
+int main()
+{
+	FILE *fp;
+	char str[100],namefile[100];
+	printf("Enter file name you wanna create:");
+    gets(namefile);
+    fp=fopen("namefile","w");
+    if(fp==NULL)
+    {
+    	printf("File not created.\n");
+	}
+   else
+   {
+   	printf("File is created.\n");
+   }
+   printf("Enter the line you want to print:");
+   gets(str);
+   fputs(str,fp);
+   fclose(fp);
+}Exampl

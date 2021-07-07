@@ -1,0 +1,19 @@
+//1.PROGRAM TO OPEN THE FILE NAMED TEST.TXT AND ADD TO IT THE TEXT ”I read in ACHS College” 
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp;
+	fp=fopen("string.txt","a");
+	if(fp==NULL)
+	{
+		printf("File can't be opened'");
+	}
+	else
+	{
+		printf("File is opened!");
+	}
+	fputs("\n I read in ACHS College" ,fp);
+	fclose(fp);
+}

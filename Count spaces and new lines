@@ -1,0 +1,29 @@
+///*COUNT NO. OF CHARACTERS, SPACES, AND NEWLINES IN A FILE*/ 
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp;
+	char ch,a;
+	int i,count1=0,count2=0;
+	fp=fopen("string.txt","r");
+    
+	while(a!=EOF)
+	{
+		a=fgetc(fp);  
+		if(a==' ')
+		{
+			count1++;
+		}
+		else if(a=='\n')
+		{
+			count2++;
+		}
+	}
+	printf("The number of spaces is %d and newlines in file is %d",count1,count2);
+	fclose(fp);
+}
+	
+	
+	
+	

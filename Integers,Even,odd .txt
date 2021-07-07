@@ -1,0 +1,41 @@
+//Write a program which accept a series of integer numbers from the user store it in integer.txt
+//and read the file and again stores all odd numbers in a file name odd.txt and all even numbers in a file name even.txt.
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	FILE *fp1,*fp2,*fp3;
+	int i,n,a[100];
+	fp1=fopen("integernumbers.txt","w");
+	printf("How many numbers?");
+	scanf("%d",&n);
+	printf("Enter numbers:");
+	for(i=1;i<=n;i++)
+	{
+		scanf("%d",&a[i]);
+		fprintf(fp"%d",a[i];
+	}
+	fclose(fp1);
+	
+	fp1=fopen("integersnumbers.txt","r");
+	fp2=fopen("odd.txt","w");
+	fp3=fopen("even.txt","w");
+	
+	
+	for(i=1;i<=n;i++)
+	{
+		fscanf(fp1,"%d",&a[i]);  
+		if((a[i]%2)==0)
+		{
+			fprintf(fp2,"%d\n",a[i]);
+		}
+		else
+		{
+			fprintf(fp3,"%d\n",a[i]);
+		}
+	}
+	fclose(fp1);
+	fclose(fp2);
+	fclose(fp3);
+}

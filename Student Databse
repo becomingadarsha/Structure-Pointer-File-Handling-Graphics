@@ -1,0 +1,20 @@
+//PROGRAM TO CREATE FILE NAMED STUDENT.TXT AND WRITE NAME, ROLL, ADDRESS, AND MARKS OF STUDENT TO THIS FILE 
+#include<stdio.h>
+int main()
+{
+	FILE *fp;
+	char name[20],address[100];
+	int roll_no,marks,total;
+	fp=fopen("student.txt","w");
+	printf("Name of student:");
+	gets(name);
+	printf("Roll no:");
+	scanf("%d",&roll_no);
+	printf("Address:");
+	scanf("%s",address);
+	printf("Total marks:");
+	scanf("%d",&total);
+    fprintf(fp,"\n\nName=%s,\nRoll no=%d,\nAddress=%s,\nTotal marks=%d\n",name,roll_no,address,total);
+	fclose(fp);
+	getch();
+}
