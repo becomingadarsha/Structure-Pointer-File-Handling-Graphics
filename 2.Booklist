@@ -1,0 +1,42 @@
+//2.	Write a program using structure of booklist having data member's title, author and cost. Enter four data and calculate total cost.
+
+
+#include<stdio.h>
+#include<string.h>
+struct booklist{
+	char title[100];
+	char author[100];
+	int cost;
+};
+int main()
+{
+		struct booklist data[100];
+	int i,n,sum=0;
+
+	printf("How many datas?:");
+	scanf("%d",&n);
+	
+	
+	for(i=0;i<n;i++)
+	{
+		getchar();
+		printf("Book Title:");
+		gets(data[i].title);
+		
+		printf("Book Author:");
+		gets(data[i].author);
+		
+		printf("Enter cost:");
+		scanf("%d",&data[i].cost);
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("\n\nBook Title: %s \n Author's name': %s \n Price: %d\n",data[i].title,data[i].author,data[i].cost);
+	
+	}
+		for(i=0;i<n;i++)
+		{
+		sum=sum+data[i].cost;
+		}
+printf("\nThe total price of books is %d",sum);
+}

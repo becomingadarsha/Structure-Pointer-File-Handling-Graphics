@@ -1,0 +1,62 @@
+//Write a program to compute total marks and percentage of N student of BSc. CSIT First Semester, with student name and roll no using structure.
+
+#include<stdio.h>
+#include<string.h>
+struct result{
+	char name[100];
+	int roll_no;
+	int a,b,c,d,e;
+};
+int main()
+{
+		struct result data[100];
+	int i,n,result=0;
+	float percent[100];
+
+	printf("How many students?:");
+	scanf("%d",&n);
+	
+	
+	for(i=0;i<n;i++)
+	{
+		getchar();
+		printf("Name:");
+		gets(data[i].name);
+		
+		printf("Enter Roll no.:");
+		scanf("%d",&data[i].roll_no);
+		
+		printf("Enter marks of Physics");
+		scanf("%d",&data[i].a);
+		
+		printf("Enter marks of DL");
+		scanf("%d",&data[i].b);
+		
+		printf("Enter marks of C Programming");
+		scanf("%d",&data[i].c);
+		
+		printf("Enter marks of Maths");
+		scanf("%d",&data[i].d);
+		
+		printf("Enter marks of IIT");
+		scanf("%d",&data[i].e);
+		
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("\n\nName: %s \n Roll no: %d\n",data[i].name,data[i].roll_no);
+	
+	}
+		for(i=0;i<n;i++)
+		{
+		 result=data[i].a+data[i].b+data[i].c+data[i].d+data[i].e;
+		 printf("\nTotal Marks: %d",result);
+		}
+
+		for(i=0;i<n;i++)
+		{
+			percent[i]=(data[i].a+data[i].b+data[i].c+data[i].d+data[i].e)/5;
+			printf("\nPercentage: %f %",percent[i]);
+		}
+return 0;
+}

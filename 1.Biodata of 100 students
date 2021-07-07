@@ -1,0 +1,31 @@
+//1.	Write a Program to store bio-data of 100 students in a class that includes name, roll number, address, DOB using structure.
+
+#include<stdio.h>
+#include<string.h>
+struct biodata{
+	char name[30];
+	int roll_no;
+	char address[30];
+	int dob;
+};
+int main()
+{
+	struct biobata stds[200];
+	int i,n;
+	printf("How many students biodata to be stored ?");
+	scanf("%d",&n);
+	
+	printf("The datas are:");
+	for(i=1;i<=n;i++)
+	{
+		printf("Enter name :");
+		gets(stds[i].name);
+		printf("Enter roll no :");
+		scanf("%d",&stds.roll_no);
+		printf("Enter address :");
+		gets(stds[i].address);
+		printf("Enter date of birth :");
+		scanf("%d",stds[i].dob);
+	}
+	printf("\n\nName: %s \n Roll no: %d \n Address: %s\n D.O.B.: %d\n",&stds[i].name,&stds.roll_no,&stds[i].address,&stds[i].dob);
+}
